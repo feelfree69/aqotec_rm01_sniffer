@@ -10,7 +10,7 @@ Welche Doku? Just read the code...
 
 ## Hardware-Anschluss
 
-Habe ich Über einen BC547 als Treiber, eine IR-LED als Sender und einen USB IR Optokopf potentialfrei gemacht. 
+Habe ich Über einen BC557 als Treiber, eine IR-LED als Sender und einen USB IR Optokopf potentialfrei gemacht. 
 
 Der 10-polige Pfostenstecker für das Flachbandkabel hat folgende Belegung (von vorne draufgeschaut):
 
@@ -22,4 +22,10 @@ GND                           FssTx
 1       2       3       4       5
 ```
 
-Dieses Projekt unterstützt nur das Mithören an FssTx . Der Trigger für das Versenden der Daten kommt über FssRx von der Zentrale.
+Das urpünglich Projekt unterstützt nur das Mithören an FssTx. Der Trigger für das Versenden der Daten kommt über FssRx von der Zentrale.
+
+Updates: 
+- Mit der Implementierung in fss_with_tx.cpp wird auch selbst gepollt, falls es die Heizzentrale nicht tut.
+- `tasmota_meter_definition.tas` ist eine alternative Implementierung für tasmota sml, das eigetnlich hauptsächlich für Stromzähler verwendet wird. War bei mir zu Versuchszwecken kurz mit einem ESP32-S3 und einem Image von 
+https://github.com/ottelo9/tasmota-sml-images installiert-
+- `esphome_config.yaml`ist eine alternative Implementierung für esphome. Dort sind auch noch ein paar DS1820B 1-wire-Temperatursensoren eingebunden. Das benutze ich aktuell wegen der guten Integration in HomeAssistant.
